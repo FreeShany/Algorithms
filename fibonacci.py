@@ -1,4 +1,4 @@
-def fibonachi(n):
+def fibonacci(n):
     fib_n = [0, 1]
     for i in range(2, n + 1):
         fib_n[0], fib_n[1] = fib_n[1], fib_n[0] + fib_n[1]
@@ -6,4 +6,4 @@ def fibonachi(n):
 
 
 n = int(input())
-print(fibonachi(n))
+print(fibonacci(n))
