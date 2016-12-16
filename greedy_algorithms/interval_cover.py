@@ -1,19 +1,19 @@
-def interval_cover(l, n):
-    i = 1
-    r = []
-    while i <= n:
-        dot = l[i-1][1]
-        r.append(dot)
-        while i <= n and dot >= l[i-1][0] and dot <= l[i-1][1]:
-            i += 1
+def cover_intervals(intervals):
+    r = [intervals[0][1]]
+    for i in range(1, len(intervals)):
+        if r[-1] < intervals[i][0]:
+            r.append(intervals[i][1])
     return(r)
 
-n = int(input())
-intervals = []
-for i in range(n):
-    s = input().split()
-    intervals.append((int(s[0]),int(s[1])))
-intervals = sorted(intervals, key=lambda interval: interval[1])
-r = interval_cover(intervals, n)
+def read_data():
+    n = int(input())
+    intervals = []
+    for i in range(n):
+        s = input().split()
+        intervals.append((int(s[0]),int(s[1])))
+    return(sorted(intervals, key=lambda interval: interval[1]))
+
+intervals = read_data()
+r = cover_intervals(intervals)
 print(str(len(r)))
 print(*r, sep=' ')
