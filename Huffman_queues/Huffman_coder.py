@@ -47,7 +47,6 @@ def huffman_line_coder(line, alphabet):
 
 line, alphabet = read_data()
 new_alphabet = huffman_coder(alphabet)
-print('New alphabet:', new_alphabet)
 code = huffman_line_coder(line, new_alphabet)
 print(str(len(new_alphabet)) + ' ' + str(len(code)))
 for symbol in new_alphabet:
