@@ -58,7 +58,5 @@ for i in range(n):
         command = s[0]
     if command == 'Insert':
         heap = insert(pr, heap)
-        #print(heap)
     if command == 'ExtractMax':
         heap = extract_max(heap)
-        #print(heap)
